@@ -1,0 +1,101 @@
+
+
+Project: Text theme classification
+Author: Kamil Goś
+
+
+******************************************
+WAGING: I have prepared my own best models that you can use during classfiaction, but the folder
+was to big to upload it via eportal so you can download it using link below. Just put folder "models" to folder
+with my code. 
+Of course you can still build your own models using -r.
+******************************************
+
+
+https://drive.google.com/drive/folders/1Y_7oO1H5DkwIDfvPxOL7ujXf3_mRJKsb?usp=sharing
+
+Python version 3.5 or higher necessary
+
+---- Necessary Libraries ---
+Libraries delivered with Python:
+os              # Miscellaneous operating system interfaces.
+collections     # helps to create dataframe from files
+random          # Random number generation
+re              # regular expression operations
+time            # time measurements
+pickle          # saving/loading models
+
+Others:
+
+pandas          # Working with data
+Version: 1.0.1
+Donwload: pip install pandas
+
+seaborn         # Statistical data visualization
+Version: 0.10.1
+Download: pip install seaborn
+
+matplotlib      # Ploting
+Version: 3.1.3
+Donwload: pip install matplotlib
+
+nltk            # natural language toolkit
+Version: 3.5
+Download: pip install nltk
+
+sklearn         # machine learning
+Version: 0.0
+Download: pip install sklearn
+
+tqdm            # progress meter
+Version: 4.46.0
+Download: pip install tqdm
+
+scipy           # horizontal stacking of arrays
+Version: 1.4.1
+Download: pip install scipy
+
+prettytable     # creates table to print
+Version: 0.7.2
+Download: pip install PrettyTable
+
+tensorflow      # neural networks
+Version 2.0.0   !!!!
+pip install -Iv tensorflow==2.0.0
+
+argparse        # argument parser
+Version: 1.1
+Download: pip install argparse
+
+pathlib         # working with files and dictionaries
+Version: 1.0.1
+Download: pip install pathlib
+
+--- HOW TO RUN ---
+
+usage: main.py [-h] [-r] [-rt TRAIN_SET] [-rm RERUN_MODELS_DIR] [-c]
+               [-ct TEXT_TO_CLASSIFY] [-cm MODELS_DIR]
+
+optional arguments:
+  -r, --rerun           Regenerate the classifiers
+  -rt TRAIN_SET, --train_set TRAIN_SET
+                        Directory with train set
+  -rm RERUN_MODELS_DIR, --rerun_models_dir RERUN_MODELS_DIR
+                        Directory to save new models
+  -c, --classify        Classify text given in directory
+  -ct TEXT_TO_CLASSIFY, --text_to_classify TEXT_TO_CLASSIFY
+                        Directory with text to classify
+  -cm MODELS_DIR, --models_dir MODELS_DIR
+                        Directory with models which should be used to classify
+                        new texts
+
+--- EXAMPLE OF USAGE ---
+Classification of new text stored in "text" folder, using delivered models stored in "models" directory.
+Text have to be stored in .txt files. All files should be in one folder.
+
+python main.py -c -ct ./text/ -cm ./models/
+
+Building and saving new models using train data stored in "train_text" folder and group in nested folders
+by their categories (like in oryginal dataset) . Save output models in directory "modelsv2".
+
+python main.py -r -rt ./train_text/ -rm ./modelsv2/
